@@ -1,6 +1,6 @@
-package com.angxd.data.projects;
+package com.angxd.rinthify.data.projects;
 
-import com.angxd.data.misc.License;
+import com.angxd.rinthify.data.misc.License;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;

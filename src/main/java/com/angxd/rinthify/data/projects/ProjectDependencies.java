@@ -1,6 +1,6 @@
-package com.angxd.data.projects;
+package com.angxd.rinthify.data.projects;
 
-import com.angxd.data.misc.Version;
+import com.angxd.rinthify.data.misc.Version;
 
 import java.util.ArrayList;
 

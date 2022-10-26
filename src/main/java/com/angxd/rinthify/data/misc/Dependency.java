@@ -1,4 +1,4 @@
-package com.angxd.data.misc;
+package com.angxd.rinthify.data.misc;
 
 import com.google.gson.annotations.SerializedName;
 

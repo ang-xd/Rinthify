@@ -1,4 +1,4 @@
-package com.angxd.data.files;
+package com.angxd.rinthify.data.files;
 
 public class File{
     public Hashes getHashes() {

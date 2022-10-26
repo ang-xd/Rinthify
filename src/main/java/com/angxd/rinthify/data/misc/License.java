@@ -1,4 +1,4 @@
-package com.angxd.data.misc;
+package com.angxd.rinthify.data.misc;
 
 public class License{
     public String id;

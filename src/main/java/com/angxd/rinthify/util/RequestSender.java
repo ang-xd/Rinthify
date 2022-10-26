@@ -1,6 +1,6 @@
-package com.angxd.util;
+package com.angxd.rinthify.util;
 
-import com.angxd.ModrinthApi;
+import com.angxd.rinthify.ModrinthApi;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,42 +12,43 @@ import java.time.Duration;
 public class RequestSender {
     private final HttpClient httpClient;
     private final String apiKey;
+    private final String userAgent;
     private final ModrinthApi modrinthApi;
-    public RequestSender(HttpClient httpClient, String apiKey, ModrinthApi modrinthApi) {
+    public RequestSender(HttpClient httpClient, String apiKey, String userAgent, ModrinthApi modrinthApi) {
         this.httpClient = httpClient;
         this.apiKey = apiKey;
+        this.userAgent = userAgent;
         this.modrinthApi = modrinthApi;
     }
 
-    public void post(String endpoint, HttpRequest.BodyPublisher bodyPublisher) throws IOException, InterruptedException {
-        HttpRequest.Builder reqBuilder = HttpRequest.newBuilder()
-                .uri(URI.create(modrinthApi.BASE_URL + endpoint))
+    private HttpRequest.Builder getBuilder(String endpoint) {
+        return HttpRequest.newBuilder()
+                .uri(URI.create(modrinthApi.baseUrl + endpoint))
                 .timeout(Duration.ofMinutes(1))
                 .header("Content-Type", "application/json")
+                .header("User-Agent", userAgent);
+    }
+    public void post(String endpoint, HttpRequest.BodyPublisher bodyPublisher) throws IOException, InterruptedException {
+        HttpRequest req = getBuilder(endpoint)
                 .header("Authorization", this.apiKey)
-                .POST(bodyPublisher);
-        HttpRequest req = reqBuilder.build();
+                .POST(bodyPublisher).build();
         httpClient.send(req, HttpResponse.BodyHandlers.ofString());
     }
 
     public void del(String endpoint) throws IOException, InterruptedException {
-        HttpRequest.Builder reqBuilder = HttpRequest.newBuilder()
-                .uri(URI.create(modrinthApi.BASE_URL + endpoint))
-                .timeout(Duration.ofMinutes(1))
-                .header("Content-Type", "application/json")
+        HttpRequest req = getBuilder(endpoint)
                 .header("Authorization", this.apiKey)
-                .DELETE();
-        HttpRequest req = reqBuilder.build();
+                .DELETE().build();
         httpClient.send(req, HttpResponse.BodyHandlers.ofString());
     }
 
     public String get(String endpoint, boolean auth) throws IOException, InterruptedException {
-        HttpRequest.Builder reqBuilder = HttpRequest.newBuilder()
-                .uri(URI.create(modrinthApi.BASE_URL + endpoint))
-                .timeout(Duration.ofMinutes(1))
-                .header("Content-Type", "application/json")
+
+        HttpRequest.Builder reqBuilder = getBuilder(endpoint)
                 .GET();
+
         if(auth) reqBuilder.header("Authorization", this.apiKey);
+
         HttpRequest req = reqBuilder.build();
 
         HttpResponse<String> response =
