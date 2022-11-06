@@ -5,7 +5,9 @@ import com.angxd.rinthify.ModrinthApi;
 import com.angxd.rinthify.data.misc.Version;
 import com.angxd.rinthify.data.projects.Project;
 import com.angxd.rinthify.data.projects.ProjectDependencies;
+import com.angxd.rinthify.data.projects.ProjectSearchResult;
 import com.angxd.rinthify.util.Endpoint;
+import com.angxd.rinthify.util.query.SearchProjectsQuery;
 
 import java.io.IOException;
 import java.net.http.HttpRequest;
@@ -43,6 +45,11 @@ public class ProjectsEndpoint extends Endpoint {
     public ProjectDependencies getProjectDependencies(String slug) {
         ProjectDependencies dependencies = deserialize(get("project/" + slug + "/dependencies", false), ProjectDependencies.class);
         return dependencies;
+    }
+
+    public ProjectSearchResult searchForProjects(SearchProjectsQuery searchProjectsQuery) {
+        ProjectSearchResult projects = deserialize(get(searchProjectsQuery.toString(), false), ProjectSearchResult.class);
+        return projects;
     }
     public Project getProject(String slug) {
         Project project = deserialize(get("project/" + slug, false), Project.class);

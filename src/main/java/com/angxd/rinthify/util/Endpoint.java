@@ -15,22 +15,23 @@ public abstract class Endpoint {
 
     public String get(String endpoint, boolean auth) {
         try {
-            modrinthApi.requestSender.get(endpoint, auth);
+            return modrinthApi.requestSender.get(endpoint, auth);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            modrinthApi.sendException(e);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            modrinthApi.sendException(e);
         }
-        return endpoint;
+        modrinthApi.sendException(new RuntimeException("Could not send get request"));
+        return null;
     }
 
     public void post(String endpoint, HttpRequest.BodyPublisher bodyPublisher)  {
         try {
             modrinthApi.requestSender.post(endpoint, bodyPublisher);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            modrinthApi.sendException(e);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            modrinthApi.sendException(e);
         }
     }
 
@@ -38,15 +39,20 @@ public abstract class Endpoint {
         try {
             modrinthApi.requestSender.del(endpoint);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            modrinthApi.sendException(e);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            modrinthApi.sendException(e);
         }
     }
 
     public <T> T deserialize(String json, Class<T> tClass) {
-        return ModrinthApi.GSON.fromJson(json, tClass);
+        try
+        {
+            return ModrinthApi.GSON.fromJson(json, tClass);
+        }catch (Exception e) {
+            modrinthApi.sendException(e);
+        }
+        modrinthApi.sendException(new RuntimeException("Could not deserialize JSON"));
+        return null;
     }
-
-
 }

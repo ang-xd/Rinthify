@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.angxd",
+    "module": "Rinthify",
+    "version": "1.0.8",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "Rinthify-1.0.8.jar",
+          "url": "Rinthify-1.0.8.jar",
+          "size": 22934,
+          "sha512": "76c25d57469907f2c5b1b1c0eb1a540be3863d50822b361cf95eecafa3518b93ad12624711595c410524b2b03cca25cfb3b1217519d7aee0258b7d4b76032cb2",
+          "sha256": "302b00ad772459fa009005a74083a16f2f53a897b7a11fee8f9bbe08a1438c95",
+          "sha1": "6c97ab3944612a4d828550fb577dcc191ba8cdd9",
+          "md5": "4f000fb97f354e347c07d38f4fa24a95"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.10"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "2.0.3"
+          }
+        },
+        {
+          "group": "com.github.mizosoft.methanol",
+          "module": "methanol",
+          "version": {
+            "requires": "1.7.0"
+          }
+        },
+        {
+          "group": "org.jetbrains",
+          "module": "annotations",
+          "version": {
+            "requires": "23.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "Rinthify-1.0.8.jar",
+          "url": "Rinthify-1.0.8.jar",
+          "size": 22934,
+          "sha512": "76c25d57469907f2c5b1b1c0eb1a540be3863d50822b361cf95eecafa3518b93ad12624711595c410524b2b03cca25cfb3b1217519d7aee0258b7d4b76032cb2",
+          "sha256": "302b00ad772459fa009005a74083a16f2f53a897b7a11fee8f9bbe08a1438c95",
+          "sha1": "6c97ab3944612a4d828550fb577dcc191ba8cdd9",
+          "md5": "4f000fb97f354e347c07d38f4fa24a95"
+        }
+      ]
+    }
+  ]
+}

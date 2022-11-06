@@ -1,93 +1,25 @@
 package com.angxd.rinthify.data.misc;
 
+import com.angxd.rinthify.data.files.File;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Version{
     public String id;
-    @SerializedName("project_id")
-    public String projectId;
-    @SerializedName("author_id")
-    public String authorId;
+    public String project_id;
+    public String author_id;
     public boolean featured;
     public String name;
-    @SerializedName("version_number")
-    public String versionNumber;
+    public String version_number;
     public String changelog;
-    @SerializedName("changelog_url")
-    public Object changelogUrl;
-    @SerializedName("date_published")
-    public Date datePublished;
-
-    public String getId() {
-        return id;
-    }
-
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public String getAuthorId() {
-        return authorId;
-    }
-
-    public boolean isFeatured() {
-        return featured;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getVersionNumber() {
-        return versionNumber;
-    }
-
-    public String getChangelog() {
-        return changelog;
-    }
-
-    public Object getChangelogUrl() {
-        return changelogUrl;
-    }
-
-    public Date getDatePublished() {
-        return datePublished;
-    }
-
-    public int getDownloads() {
-        return downloads;
-    }
-
-    public String getVersionType() {
-        return versionType;
-    }
-
-    public ArrayList<File> getFiles() {
-        return files;
-    }
-
-    public ArrayList<Object> getDependencies() {
-        return dependencies;
-    }
-
-    public ArrayList<String> getGameVersions() {
-        return gameVersions;
-    }
-
-    public ArrayList<String> getLoaders() {
-        return loaders;
-    }
-
+    public Object changelog_url;
+    public Date date_published;
     public int downloads;
-    @SerializedName("version_type")
-    public String versionType;
+    public String version_type;
     public ArrayList<File> files;
-    public ArrayList<Object> dependencies;
-    @SerializedName("game_versions")
-    public ArrayList<String> gameVersions;
+    public ArrayList<Dependency> dependencies;
+    public ArrayList<String> game_versions;
     public ArrayList<String> loaders;
 }
