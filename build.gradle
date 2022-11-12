@@ -7,7 +7,7 @@ group 'com.github.ang-xd:Rinthify'
 version '1.0.1'
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {

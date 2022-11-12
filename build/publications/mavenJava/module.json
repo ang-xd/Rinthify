@@ -1,9 +1,9 @@
 {
   "formatVersion": "1.1",
   "component": {
-    "group": "com.angxd",
+    "group": "com.github.ang-xd:Rinthify",
     "module": "Rinthify",
-    "version": "1.0.8",
+    "version": "1.0.1",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "Rinthify-1.0.8.jar",
-          "url": "Rinthify-1.0.8.jar",
+          "name": "Rinthify-1.0.1.jar",
+          "url": "Rinthify-1.0.1.jar",
           "size": 22934,
-          "sha512": "76c25d57469907f2c5b1b1c0eb1a540be3863d50822b361cf95eecafa3518b93ad12624711595c410524b2b03cca25cfb3b1217519d7aee0258b7d4b76032cb2",
-          "sha256": "302b00ad772459fa009005a74083a16f2f53a897b7a11fee8f9bbe08a1438c95",
-          "sha1": "6c97ab3944612a4d828550fb577dcc191ba8cdd9",
-          "md5": "4f000fb97f354e347c07d38f4fa24a95"
+          "sha512": "bed05acaff3fad748ae94b6deebb92b01663cbb0b286ab163271cce11fc115e61e6c34857e06fef6f78fee5ff4f82a99f237219ec1deaf898a97c9419ec6d157",
+          "sha256": "d85f01ecdbbbe1b04231fc8cac2b3804d4f72c1be1c086bf905788b10d22ae9e",
+          "sha1": "6691702fbb19db24542ee2d22b27d295cf262200",
+          "md5": "179389b4bf04d5d32230e16231e68887"
         }
       ]
     },
@@ -76,13 +76,13 @@
       ],
       "files": [
         {
-          "name": "Rinthify-1.0.8.jar",
-          "url": "Rinthify-1.0.8.jar",
+          "name": "Rinthify-1.0.1.jar",
+          "url": "Rinthify-1.0.1.jar",
           "size": 22934,
-          "sha512": "76c25d57469907f2c5b1b1c0eb1a540be3863d50822b361cf95eecafa3518b93ad12624711595c410524b2b03cca25cfb3b1217519d7aee0258b7d4b76032cb2",
-          "sha256": "302b00ad772459fa009005a74083a16f2f53a897b7a11fee8f9bbe08a1438c95",
-          "sha1": "6c97ab3944612a4d828550fb577dcc191ba8cdd9",
-          "md5": "4f000fb97f354e347c07d38f4fa24a95"
+          "sha512": "bed05acaff3fad748ae94b6deebb92b01663cbb0b286ab163271cce11fc115e61e6c34857e06fef6f78fee5ff4f82a99f237219ec1deaf898a97c9419ec6d157",
+          "sha256": "d85f01ecdbbbe1b04231fc8cac2b3804d4f72c1be1c086bf905788b10d22ae9e",
+          "sha1": "6691702fbb19db24542ee2d22b27d295cf262200",
+          "md5": "179389b4bf04d5d32230e16231e68887"
         }
       ]
     }
