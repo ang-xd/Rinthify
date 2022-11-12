@@ -4,10 +4,15 @@ plugins {
 }
 
 group 'com.github.ang-xd:Rinthify'
-version '1.0.1'
+version '1.1.0'
 
 repositories {
     jcenter()
+
+    maven {
+        name = "Jitpack"
+        url 'https://jitpack.io/'
+    }
 }
 
 dependencies {
@@ -28,12 +33,6 @@ publishing {
     }
     repositories {
         maven {
-            name = "11maven" //  optional target repository name
-            url = "https://maven.mineblock11.dev/releases"
-            credentials {
-                username maven11Username
-                password maven11Password
-            }
         }
     }
 }
